@@ -1,0 +1,19 @@
+# inference_config.yaml
+
+settings:
+  device: "auto"  # "cuda", "cpu", or "auto"
+  seed: 42        # 设置随机种子
+
+paths:
+  data_dir: "data"
+  model_dir: "module"
+  vocab_file: "TinyStories_vocab.pkl"
+  merges_file: "TinyStories_merges.pkl"
+
+generation:
+  prompt: "Once upon a time, there was a little "
+  max_gen_tokens: 256
+  temperature: 0.8   # 温度越高越随机 (0.0 - 1.0+)
+  top_p: 0.95        # Nucleus sampling 阈值
+  special_tokens: 
+    - "<|endoftext|>"

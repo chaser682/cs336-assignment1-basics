@@ -1,0 +1,37 @@
+# config.yaml
+project_name: "cs336_ass1"
+run_name_prefix: "transformer-run"
+
+data:
+  data_dir: "data"           # 数据文件夹名称（相对于脚本所在目录）
+  train_file: "TStrain_tokens.bin"
+  valid_file: "TSvalid_tokens.bin"
+  vocab_size: 10000
+  context_length: 256
+
+model:
+  d_model: 256
+  d_ff: 1344
+  n_layers: 4
+  n_heads: 16
+  rope_theta: 10000  # 使用RoPE
+  max_gen_tokens: 256
+  temperature: 0.8
+  top_p: 0.95
+
+train:
+  batch_size: 16 
+  total_iters: 5000
+  initial_lr: 0.0033
+  min_lr_ratio: 0.01         # min_lr = initial_lr * this
+  warmup_ratio: 0.1          # warmup_iters = total_iters * this
+  max_l2_norm: 0.01
+  log_interval_ratio: 0.005  # total_iters / 200
+  ckpt_interval_ratio: 0.05  # total_iters / 20
+  val_interval_ratio: 0.05   # total_iters / 20
+  ckpt_dir: "module"         # 检查点保存文件夹
+  ckpt_name: "TScheckpoint.pt"
+
+wandb:
+  enabled: true
+  project: "cs336_ass1"
