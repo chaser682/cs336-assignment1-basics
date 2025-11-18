@@ -22,6 +22,24 @@ uv run pytest
 ```bash
 uv run pytest tests/test_xx.py
 ```
+## Train
+
+1. **Training BPE Tokenization**
+    ```bash
+    uv run train_bpe.py
+    ```
+
+2. **Training Transformer**
+    ```bash
+    uv run train_transformer.py
+    ```
+
+3. **Using Transformer for Inference**
+    ```bash
+    uv run train_transformer.py
+    ```
+
+![Alt text](loss.png)
 
 ## Setup
 
