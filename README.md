@@ -36,7 +36,7 @@ uv run pytest tests/test_xx.py
 
 3. **Using Transformer for Inference**
     ```bash
-    uv run train_transformer.py
+    uv run inference.py
     ```
 
 ![Alt text](loss.png)
